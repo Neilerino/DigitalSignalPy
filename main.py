@@ -6,6 +6,8 @@ import struct
 import matplotlib.pyplot as plt
 
 from generate_wav import generate_wav
+from vertical_plot import VerticalPlot
+
 
 frame_rate = 48000.0
 file = 'test.wav'
@@ -25,15 +27,11 @@ wave_noise = np.array(generate_wav(50))
 
 combined_signal = wave + wave_noise
 
-plt.subplot(3,1,1)
-plt.plot(wave[:500])
-plt.title('Original Signal')
+signals = [
+        [wave[:500], 'Original Signal'],
+        [wave_noise[:4000], 'Noise'],
+        [combined_signal[:3000], 'Combined Signal'],
+]
 
-plt.subplot(3,1,2)
-plt.plot(wave_noise[:4000])
-plt.title('Noise')
-
-plt.subplot(3,1,3)
-plt.plot(combined_signal[:3000])
-plt.title('Combined Signal')
-plt.show()
+vertical_plot = VerticalPlot(signals)
+vertical_plot.show()
