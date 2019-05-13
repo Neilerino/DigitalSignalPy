@@ -28,4 +28,4 @@ def generate_wav(freq, file_name=None):
             wav_file.writeframes(struct.pack('h', int(s*amplitude)))
             # the pack method converts the integter to a hexadecimal value so that the wav_file can properly maniuplate it
 
-    return sin_wave
+    return py.array(sin_wave)

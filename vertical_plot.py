@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import multiprocessing
+from threading import Thread
 
 class VerticalPlot:
     def __init__(self, signals):

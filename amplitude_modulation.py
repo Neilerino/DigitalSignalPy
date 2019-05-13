@@ -1,0 +1,1 @@
+def amplitude_modulate(message)
